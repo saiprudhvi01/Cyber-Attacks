@@ -19,6 +19,10 @@ wheels/
 .installed.cfg
 *.egg
 
+# Streamlit
+.streamlit/*
+!.streamlit/config.toml
+
 # Virtual Environment
 venv/
 ENV/
