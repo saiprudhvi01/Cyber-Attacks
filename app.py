@@ -1,6 +1,11 @@
 import streamlit as st
 from detection_rules import AttackDetector, DetectionResult
 from typing import Optional, Dict, Any, List
+import os
+
+# Disable file watcher to prevent inotify errors
+os.environ["STREAMLIT_SERVER_FILE_WATCHER_TYPE"] = "none"
+st.set_option('server.fileWatcherType', 'none')
 
 def render_result(result: DetectionResult) -> None:
     """Render the detection result in a formatted way.
